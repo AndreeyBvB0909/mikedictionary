@@ -1,0 +1,190 @@
+/* ===========================
+   CAROUSEL
+=========================== */
+.mySwiper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 60px 0;
+  margin: 0 auto;
+}
+
+.mySwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cards */
+.card-container {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #ffffff, #f0fdf4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.card-container:hover {
+  transform: scale(1.07);
+  /* sombra más intensa al pasar el mouse */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Imágenes */
+.card-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  object-fit: cover;
+}
+
+/* ===========================
+   BOTONES SWIPER MODERNOS
+=========================== */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #10b981, #059669); /* degradado verde moderno */
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 4px 15px rgba(0,0,0,0.2), /* sombra principal */
+    inset 0 2px 4px rgba(255,255,255,0.2); /* luz interna */
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: linear-gradient(145deg, #059669, #10b981); /* inversión ligera del degradado */
+  transform: scale(1.15) rotate(10deg); /* ligeramente girado y más grande */
+  box-shadow: 
+    0 8px 24px rgba(0,0,0,0.25),
+    inset 0 3px 6px rgba(255,255,255,0.25);
+  color: #ffffff;
+}
+
+/* Ajuste de íconos internos para centrar bien */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+/* ===========================
+   PAGINATION PROGRESSBAR
+=========================== */
+.swiper-pagination-progressbar {
+  background: #e2e8f0;
+  height: 6px;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.swiper-pagination-progressbar-fill {
+  background-color: #10b981 !important;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* ===========================
+   MODAL PREVIEW
+=========================== */
+.preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+.preview-container {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  animation: scaleIn 0.3s ease;
+}
+
+.preview-img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: #f43f5e;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 18px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #e11d48;
+  transform: scale(1.1);
+}
+
+/* ===========================
+   ANIMACIONES
+=========================== */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes scaleIn {
+  from {transform: scale(0.85);}
+  to {transform: scale(1);}
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  header {
+    font-size: 22px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+
