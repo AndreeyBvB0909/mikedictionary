@@ -41,7 +41,8 @@ const Cards = () => {
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757119511/otters_avtfjo.png",
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757210953/haul_xpbt1r.png",
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757210958/lark_lhfdml.png",
-      "https://res.cloudinary.com/doznpzndo/image/upload/v1757210953/haul_xpbt1r.png"
+      "https://res.cloudinary.com/doznpzndo/image/upload/v1757210953/haul_xpbt1r.png",
+      "https://res.cloudinary.com/doznpzndo/image/upload/v1757384716/cot_yjonyo.png"
     ],
     eI: [
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757119772/hay_bvadbb.png",
@@ -94,6 +95,7 @@ const Cards = () => {
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757119657/awe_itvslq.png",
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757119655/naughty_xfojvd.png",
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757119645/flaw_nwvpsy.png",
+      "https://res.cloudinary.com/doznpzndo/image/upload/v1757384763/dawn_enbozt.png"
     ],
     u: [
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757120296/ooze_r1dsu3.png",
@@ -108,6 +110,7 @@ const Cards = () => {
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757120066/wool_hjfvyp.png",
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757120066/shook_qebnfe.png",
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757120042/bulletin_tdpynm.png",
+      "https://res.cloudinary.com/doznpzndo/image/upload/v1757385519/soot_rm2ogc.png"
     ],
     ʌ: [
       "https://res.cloudinary.com/doznpzndo/image/upload/v1757120310/upper_afanz3.png",
