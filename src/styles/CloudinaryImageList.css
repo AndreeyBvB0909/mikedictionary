@@ -1,0 +1,18 @@
+.cloudinarySwiper {
+  width: 400px;
+  height: 700px;
+  margin: 30px auto;
+}
+
+.cloudinarySwiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloudinarySwiper .swiper-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  cursor: pointer;
+}

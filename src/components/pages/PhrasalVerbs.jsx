@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import CloudinaryImageList from '../ui/CloudinaryImageList';
 
 export const PhrasalVerbs = () => {
   return (
-    <div>PhrasalVerbs</div>
-  )
-}
+    <div>
+      <CloudinaryImageList tag="phrasal-verbs" />
+    </div>
+  );
+};
+
 export default PhrasalVerbs;
