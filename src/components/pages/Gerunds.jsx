@@ -1,8 +1,11 @@
 import React from 'react'
+import CloudinaryImageList from '../ui/CloudinaryImageList'
 
 export const Gerunds = () => {
   return (
-    <div>Gerunds</div>
+    <div>
+      <CloudinaryImageList tag="gerunds" />
+    </div>
   )
 }
 export default Gerunds;

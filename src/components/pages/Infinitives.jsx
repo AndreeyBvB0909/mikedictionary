@@ -1,8 +1,11 @@
 import React from 'react'
+import CloudinaryImageList from '../ui/CloudinaryImageList'
 
 export const Infinitives = () => {
   return (
-    <div>Infinitives</div>
+    <div>
+      <CloudinaryImageList tag="infinitives" />
+    </div>
   )
 }
 
