@@ -1,8 +1,9 @@
-import React from 'react'
+import React from "react";
+
+import AppRoutes from "../../routes/AppRoutes";
 
 const Main = () => {
-  return (
-    <div>Main</div>
-  );
+  return <AppRoutes />;
 };
+
 export default Main;

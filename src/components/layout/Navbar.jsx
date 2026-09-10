@@ -1,68 +1,55 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import React from "react";
 
-function samePageLinkNavigation(event) {
-  if (
-    event.defaultPrevented ||
-    event.button !== 0 ||
-    event.metaKey ||
-    event.ctrlKey ||
-    event.altKey ||
-    event.shiftKey
-  ) {
-    return false;
-  }
+import Box from "@mui/material/Box";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 
-  return true;
-}
-
-function LinkTab(props) {
-  return (
-    <Tab
-      component="a"
-      onClick={(event) => {
-        if (samePageLinkNavigation(event)) {
-          event.preventDefault();
-        }
-      }}
-      aria-current={props.selected ? 'page' : undefined}
-      {...props}
-    />
-  );
-}
-
-LinkTab.propTypes = {
-  selected: PropTypes.bool,
-};
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const [value, setValue] = React.useState(0);
+  const location = useLocation();
 
-  const handleChange = (event, newValue) => {
-    if (
-      event.type !== 'click' ||
-      (event.type === 'click' && samePageLinkNavigation(event))
-    ) {
-      setValue(newValue);
+  const getTabValue = () => {
+    switch (location.pathname) {
+      case "/vowels":
+        return 0;
+
+      case "/phrasal-verbs":
+        return 1;
+
+      case "/gerunds-infinitives":
+        return 2;
+
+      default:
+        return 0;
     }
   };
 
   return (
     <div className="navbar">
-      <Box sx={{ width: '100%' }}>
+      <Box sx={{ width: "100%" }}>
         <Tabs
-          value={value}
-          onChange={handleChange}
+          value={getTabValue()}
           aria-label="navigation tabs"
           role="navigation"
         >
-          <LinkTab label="Home" href="/" />
-          <LinkTab label="About" href="/about" />
-          <LinkTab label="Services" href="/services" />
-          <LinkTab label="Contact" href="/contact" />
+          <Tab
+            label="Vowels"
+            component={NavLink}
+            to="/vowels"
+          />
+
+          <Tab
+            label="Phrasal Verbs"
+            component={NavLink}
+            to="/phrasal-verbs"
+          />
+
+          <Tab
+            label="Gerunds & Infinitives"
+            component={NavLink}
+            to="/gerunds-infinitives"
+          />
         </Tabs>
       </Box>
     </div>
