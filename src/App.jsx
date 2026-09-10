@@ -3,7 +3,7 @@ import Header from "../src/components/layout/Header";
 import Footer from "../src/components/layout/Footer";
 import Navbar from "../src/components/layout/Navbar";
 import Cards from "../src/components/ui/Cards";
-import Dashboard from "./components/pages/Dashboard";
+import Vowels from "./components/pages/Vowels";
 import Maintenance from "./components/pages/Maintenance";
 import "./App.css";
 
@@ -15,7 +15,7 @@ function App() {
         <Navbar />
       </header>
       <main>
-        <Maintenance />
+        <Vowels />
       </main>
       <Footer />
     </div>
