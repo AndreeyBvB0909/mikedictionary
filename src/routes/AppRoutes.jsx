@@ -8,7 +8,8 @@ import {
 
 import { Vowels } from "../components/pages/Vowels";
 import { PhrasalVerbs } from "../components/pages/PhrasalVerbs";
-import { GerundsInfinitives } from "../components/pages/GerundsInfinitives";
+import { Gerunds } from "../components/pages/Gerunds";
+import { Infinitives } from "../components/pages/Infinitives";
 
 const AppRoutes = () => {
   return (
@@ -30,8 +31,13 @@ const AppRoutes = () => {
         />
 
         <Route
-          path="/gerunds-infinitives"
-          element={<GerundsInfinitives />}
+          path="/gerunds"
+          element={<Gerunds />}
+        />
+
+        <Route
+          path="/infinitives"
+          element={<Infinitives />}
         />
       </Routes>
     </section>

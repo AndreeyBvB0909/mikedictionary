@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const menuOpen = Boolean(anchorEl);
 
   const getTabValue = () => {
     switch (location.pathname) {
@@ -17,12 +24,31 @@ const Navbar = () => {
       case "/phrasal-verbs":
         return 1;
 
-      case "/gerunds-infinitives":
+      case "/gerunds":
+      case "/infinitives":
         return 2;
 
       default:
         return 0;
     }
+  };
+
+  const handleGerundsInfinitivesClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleGerundsClick = () => {
+    handleMenuClose();
+    navigate("/gerunds");
+  };
+
+  const handleInfinitivesClick = () => {
+    handleMenuClose();
+    navigate("/infinitives");
   };
 
   return (
@@ -47,13 +73,31 @@ const Navbar = () => {
 
           <Tab
             label="Gerunds & Infinitives"
-            component={NavLink}
-            to="/gerunds-infinitives"
+            onClick={handleGerundsInfinitivesClick}
+            aria-controls={menuOpen ? "gerunds-infinitives-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={menuOpen ? "true" : undefined}
           />
         </Tabs>
+
+        <Menu
+          id="gerunds-infinitives-menu"
+          anchorEl={anchorEl}
+          open={menuOpen}
+          onClose={handleMenuClose}
+        >
+          <MenuItem onClick={handleGerundsClick}>
+            Gerunds
+          </MenuItem>
+
+          <MenuItem onClick={handleInfinitivesClick}>
+            Infinitives
+          </MenuItem>
+        </Menu>
       </Box>
     </div>
   );
 };
 
 export default Navbar;
+
