@@ -5,6 +5,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import "../../styles/Navbar.css"
 
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
@@ -58,18 +59,22 @@ const Navbar = () => {
           value={getTabValue()}
           aria-label="navigation tabs"
           role="navigation"
+          centered
+          sx={{
+            "& .MuiTab-root": {
+              color: "white",
+            },
+            "& .MuiTab-root.Mui-selected": {
+              color: "white",
+            },
+            "& .MuiTabs-indicator": {
+              backgroundColor: "white",
+            },
+          }}
         >
-          <Tab
-            label="Vowels"
-            component={NavLink}
-            to="/vowels"
-          />
+          <Tab label="Vowels" component={NavLink} to="/vowels" />
 
-          <Tab
-            label="Phrasal Verbs"
-            component={NavLink}
-            to="/phrasal-verbs"
-          />
+          <Tab label="Phrasal Verbs" component={NavLink} to="/phrasal-verbs" />
 
           <Tab
             label="Gerunds & Infinitives"
@@ -86,13 +91,9 @@ const Navbar = () => {
           open={menuOpen}
           onClose={handleMenuClose}
         >
-          <MenuItem onClick={handleGerundsClick}>
-            Gerunds
-          </MenuItem>
+          <MenuItem onClick={handleGerundsClick}>Gerunds</MenuItem>
 
-          <MenuItem onClick={handleInfinitivesClick}>
-            Infinitives
-          </MenuItem>
+          <MenuItem onClick={handleInfinitivesClick}>Infinitives</MenuItem>
         </Menu>
       </Box>
     </div>
@@ -100,4 +101,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
