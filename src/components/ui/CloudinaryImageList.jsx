@@ -12,6 +12,19 @@ import "../../styles/CloudinaryImageList.css";
 
 import { EffectCube, Pagination } from "swiper/modules";
 
+// Mezcla las imágenes usando Fisher-Yates
+const shuffleImages = (images) => {
+  const shuffled = [...images];
+
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled;
+};
+
 function CloudinaryImageList({ tag }) {
   const [previewUrl, setPreviewUrl] = useState(null);
 
@@ -46,7 +59,7 @@ function CloudinaryImageList({ tag }) {
 
       const data = await response.json();
 
-      return data.resources || [];
+      return shuffleImages(data.resources || []);
     },
 
     enabled: Boolean(tag),
