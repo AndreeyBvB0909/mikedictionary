@@ -7,8 +7,83 @@
   border-radius: 12px;
 
   padding: 5px 15px;
-
   margin: 15px auto;
 
   width: fit-content;
+  max-width: calc(100% - 30px);
+
+  box-sizing: border-box;
+}
+
+/* Tabs */
+.navbar .MuiTabs-root {
+  min-height: 48px;
+}
+
+/* Texto de los tabs */
+.navbar .MuiTab-root {
+  color: white;
+  min-width: auto;
+  white-space: nowrap;
+}
+
+/* Tab seleccionado */
+.navbar .MuiTab-root.Mui-selected {
+  color: white;
+}
+
+/* Indicador */
+.navbar .MuiTabs-indicator {
+  background-color: white;
+}
+
+/* =========================
+   TABLETS
+   ========================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    max-width: calc(100% - 20px);
+    padding: 5px 10px;
+  }
+
+  .navbar .MuiTab-root {
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
+   CELULARES
+   ========================= */
+
+@media (max-width: 480px) {
+  .navbar {
+    width: calc(100% - 20px);
+    max-width: none;
+
+    margin: 10px auto;
+    padding: 4px 5px;
+  }
+
+  .navbar .MuiTabs-root {
+    width: 100%;
+  }
+
+  .navbar .MuiTabs-flexContainer {
+    width: 100%;
+  }
+
+  .navbar .MuiTab-root {
+    flex: 1;
+    min-width: 0;
+
+    padding: 8px 5px;
+
+    font-size: 0.75rem;
+
+    white-space: normal;
+    line-height: 1.2;
+  }
 }
