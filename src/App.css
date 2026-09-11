@@ -27,6 +27,18 @@ header::after {
   transform: rotate(-5deg);
 }
 
+.header h1 {
+  width: 100%;
+
+  font-size: clamp(24px, 6vw, 42px);
+  line-height: 1.1;
+
+  font-weight: 700;
+  letter-spacing: clamp(0.5px, 0.2vw, 1.5px);
+
+  text-align: center;
+}
+
 /* ===========================
    MAIN MODERNO
 =========================== */
