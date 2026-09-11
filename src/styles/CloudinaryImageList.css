@@ -1,5 +1,5 @@
 .cloudinarySwiper {
-  width: min(400px, 90vw);
+  width: min(400px, 90%);
   height: min(700px, 80vh);
 
   margin: 30px auto;
