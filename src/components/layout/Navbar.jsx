@@ -19,10 +19,10 @@ const Navbar = () => {
 
   const getTabValue = () => {
     switch (location.pathname) {
-      case "/vowels":
+      case "/phrasal-verbs":
         return 0;
 
-      case "/phrasal-verbs":
+      case "/vowels":
         return 1;
 
       case "/gerunds":
@@ -72,9 +72,8 @@ const Navbar = () => {
             },
           }}
         >
-          <Tab label="Vowels" component={NavLink} to="/vowels" />
-
           <Tab label="Phrasal Verbs" component={NavLink} to="/phrasal-verbs" />
+          <Tab label="Vowels" component={NavLink} to="/vowels" />
 
           <Tab
             label="Gerunds & Infinitives"

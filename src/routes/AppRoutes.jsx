@@ -17,7 +17,7 @@ const AppRoutes = () => {
       <Routes>
         <Route
           path="/"
-          element={<Navigate to="/vowels" replace />}
+          element={<Navigate to="/phrasal-verbs" replace />}
         />
 
         <Route
