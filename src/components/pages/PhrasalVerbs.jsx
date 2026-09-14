@@ -6,13 +6,15 @@ export const PhrasalVerbs = () => {
   const practiceLinks = [
     {
       title: "General Phrasal Verb Exercises",
-      description: "Practice common phrasal verbs with interactive exercises.",
+      description:
+        "Practice common phrasal verbs with interactive exercises.",
       source: "AgendaWeb",
       url: "https://agendaweb.org/verbs/phrasal_verbs2-exercises.html",
     },
     {
       title: "Phrasal Verbs with Prepositions",
-      description: "Practice phrasal verbs and their prepositions.",
+      description:
+        "Practice phrasal verbs and their prepositions.",
       source: "AgendaWeb",
       url: "https://agendaweb.org/verbs/phrasal-verbs-preposition-exercises.html",
     },
@@ -32,7 +34,8 @@ export const PhrasalVerbs = () => {
     },
     {
       title: "Phrasal Verbs Match Up",
-      description: "Match phrasal verbs with their meanings.",
+      description:
+        "Match phrasal verbs with their meanings.",
       source: "Wordwall",
       url: "https://wordwall.net/es/resource/12167966/english/phrasal-verbs-match-up",
     },
@@ -62,22 +65,30 @@ export const PhrasalVerbs = () => {
   return (
     <div>
       <div className="phrasal-verbs-intro">
+
+        {/* Title */}
+
         <h2>Phrasal Verbs</h2>
+
+        {/* Cards */}
+
+        <CloudinaryImageList tag="phrasal-verbs" />
+
+        {/* Description */}
 
         <p>
           Phrasal verbs are common English expressions formed by combining a
           verb with a preposition or adverb. They often have a meaning that is
           different from the original verb, making them an important part of
-          everyday English vocabulary and communication. Learning common phrasal
-          verbs can help English learners understand conversations, improve
-          their speaking skills, and communicate more naturally.
+          everyday English vocabulary and communication. Learning common
+          phrasal verbs can help English learners understand conversations,
+          improve their speaking skills, and communicate more naturally.
         </p>
+
       </div>
 
-      {/* Phrasal Verb Cards */}
-      <CloudinaryImageList tag="phrasal-verbs" />
-
       {/* Practice */}
+
       <section className="practice-section">
         <h3>Practice</h3>
 
@@ -88,12 +99,17 @@ export const PhrasalVerbs = () => {
 
         <div className="practice-grid">
           {practiceLinks.map((practice) => (
-            <article className="practice-card" key={practice.url}>
+            <article
+              className="practice-card"
+              key={practice.url}
+            >
               <h4>{practice.title}</h4>
 
               <p>{practice.description}</p>
 
-              <span className="practice-source">{practice.source}</span>
+              <span className="practice-source">
+                {practice.source}
+              </span>
 
               <a
                 href={practice.url}
