@@ -66,15 +66,9 @@ export const PhrasalVerbs = () => {
     <div>
       <div className="phrasal-verbs-intro">
 
-        {/* Title */}
-
         <h2>Phrasal Verbs</h2>
 
-        {/* Cards */}
-
         <CloudinaryImageList tag="phrasal-verbs" />
-
-        {/* Description */}
 
         <p>
           Phrasal verbs are common English expressions formed by combining a
@@ -86,8 +80,6 @@ export const PhrasalVerbs = () => {
         </p>
 
       </div>
-
-      {/* Practice */}
 
       <section className="practice-section">
         <h3>Practice</h3>
