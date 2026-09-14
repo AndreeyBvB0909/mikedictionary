@@ -5,9 +5,14 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import "../../styles/Navbar.css"
 
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import "../../styles/Navbar.css";
+
+import {
+  NavLink,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
@@ -22,11 +27,11 @@ const Navbar = () => {
       case "/phrasal-verbs":
         return 0;
 
+      case "/consonants":
       case "/vowels":
         return 1;
 
-      case "/gerunds":
-      case "/infinitives":
+      case "/gerunds-infinitives":
         return 2;
 
       default:
@@ -34,7 +39,7 @@ const Navbar = () => {
     }
   };
 
-  const handleGerundsInfinitivesClick = (event) => {
+  const handlePronunciationClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -42,14 +47,14 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
-  const handleGerundsClick = () => {
+  const handleConsonantsClick = () => {
     handleMenuClose();
-    navigate("/gerunds");
+    navigate("/consonants");
   };
 
-  const handleInfinitivesClick = () => {
+  const handleVowelsClick = () => {
     handleMenuClose();
-    navigate("/infinitives");
+    navigate("/vowels");
   };
 
   return (
@@ -64,35 +69,54 @@ const Navbar = () => {
             "& .MuiTab-root": {
               color: "white",
             },
+
             "& .MuiTab-root.Mui-selected": {
               color: "white",
             },
+
             "& .MuiTabs-indicator": {
               backgroundColor: "white",
             },
           }}
         >
-          <Tab label="Phrasal Verbs" component={NavLink} to="/phrasal-verbs" />
-          <Tab label="Vowels" component={NavLink} to="/vowels" />
+          <Tab
+            label="Phrasal Verbs"
+            component={NavLink}
+            to="/phrasal-verbs"
+          />
+
+          <Tab
+            label="Pronunciation"
+            onClick={handlePronunciationClick}
+            aria-controls={
+              menuOpen ? "pronunciation-menu" : undefined
+            }
+            aria-haspopup="true"
+            aria-expanded={
+              menuOpen ? "true" : undefined
+            }
+          />
 
           <Tab
             label="Gerunds & Infinitives"
-            onClick={handleGerundsInfinitivesClick}
-            aria-controls={menuOpen ? "gerunds-infinitives-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={menuOpen ? "true" : undefined}
+            component={NavLink}
+            to="/gerunds-infinitives"
           />
         </Tabs>
 
         <Menu
-          id="gerunds-infinitives-menu"
+          id="pronunciation-menu"
           anchorEl={anchorEl}
           open={menuOpen}
           onClose={handleMenuClose}
         >
-          <MenuItem onClick={handleGerundsClick}>Gerunds</MenuItem>
+          <MenuItem onClick={handleConsonantsClick}>
+            Consonants
+          </MenuItem>
 
-          <MenuItem onClick={handleInfinitivesClick}>Infinitives</MenuItem>
+          <MenuItem onClick={handleVowelsClick}>
+            Vowels
+          </MenuItem>
         </Menu>
       </Box>
     </div>

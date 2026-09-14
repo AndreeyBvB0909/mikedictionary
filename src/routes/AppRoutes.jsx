@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Routes,
   Route,
@@ -7,40 +6,43 @@ import {
 } from "react-router-dom";
 
 import { Vowels } from "../components/pages/Vowels";
+import { Consonants } from "../components/pages/Consonants";
 import { PhrasalVerbs } from "../components/pages/PhrasalVerbs";
-import { Gerunds } from "../components/pages/Gerunds";
-import { Infinitives } from "../components/pages/Infinitives";
+import { GerundsInfinitives } from "../components/pages/GerundsInfinitives";
 
 const AppRoutes = () => {
   return (
-    <section id="content" className="content">
-      <Routes>
-        <Route
-          path="/"
-          element={<Navigate to="/phrasal-verbs" replace />}
-        />
+    <Routes>
+      <Route
+        path="/"
+        element={<Navigate to="/phrasal-verbs" replace />}
+      />
 
-        <Route
-          path="/vowels"
-          element={<Vowels />}
-        />
+      <Route
+        path="/phrasal-verbs"
+        element={<PhrasalVerbs />}
+      />
 
-        <Route
-          path="/phrasal-verbs"
-          element={<PhrasalVerbs />}
-        />
+      <Route
+        path="/consonants"
+        element={<Consonants />}
+      />
 
-        <Route
-          path="/gerunds"
-          element={<Gerunds />}
-        />
+      <Route
+        path="/vowels"
+        element={<Vowels />}
+      />
 
-        <Route
-          path="/infinitives"
-          element={<Infinitives />}
-        />
-      </Routes>
-    </section>
+      <Route
+        path="/gerunds-infinitives"
+        element={<GerundsInfinitives />}
+      />
+
+      <Route
+        path="*"
+        element={<Navigate to="/phrasal-verbs" replace />}
+      />
+    </Routes>
   );
 };
 
