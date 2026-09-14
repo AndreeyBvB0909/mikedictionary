@@ -1,57 +1,61 @@
-import React from 'react';
-import CloudinaryImageList from '../ui/CloudinaryImageList';
-import '../../styles/PhrasalVerbs.css';
+import React from "react";
+import CloudinaryImageList from "../ui/CloudinaryImageList";
+import "../../styles/PhrasalVerbs.css";
 
 export const PhrasalVerbs = () => {
   const practiceLinks = [
     {
-      title: 'General Phrasal Verb Exercises',
-      description:
-        'Practice common phrasal verbs with interactive exercises.',
-      source: 'AgendaWeb',
-      url: 'https://agendaweb.org/verbs/phrasal_verbs2-exercises.html',
+      title: "General Phrasal Verb Exercises",
+      description: "Practice common phrasal verbs with interactive exercises.",
+      source: "AgendaWeb",
+      url: "https://agendaweb.org/verbs/phrasal_verbs2-exercises.html",
     },
     {
-      title: 'Phrasal Verbs with Prepositions',
-      description:
-        'Practice phrasal verbs and their prepositions.',
-      source: 'AgendaWeb',
-      url: 'https://agendaweb.org/verbs/phrasal-verbs-preposition-exercises.html',
+      title: "Phrasal Verbs with Prepositions",
+      description: "Practice phrasal verbs and their prepositions.",
+      source: "AgendaWeb",
+      url: "https://agendaweb.org/verbs/phrasal-verbs-preposition-exercises.html",
     },
     {
-      title: 'Phrasal Verbs by Particle',
+      title: "Phrasal Verbs by Particle",
       description:
-        'Practice phrasal verbs with particles such as up, off, out and on.',
-      source: 'AgendaWeb',
-      url: 'https://agendaweb.org/verbs/phrasal-verbs-by-particle.html',
+        "Practice phrasal verbs with particles such as up, off, out and on.",
+      source: "AgendaWeb",
+      url: "https://agendaweb.org/verbs/phrasal-verbs-by-particle.html",
     },
     {
-      title: 'Phrasal Verb Cloze',
+      title: "Phrasal Verb Cloze",
       description:
-        'Complete sentences by choosing the appropriate phrasal verb.',
-      source: 'Wordwall',
-      url: 'https://wordwall.net/es/resource/100075060/esl/phrasal-verb-cloze',
+        "Complete sentences by choosing the appropriate phrasal verb.",
+      source: "Wordwall",
+      url: "https://wordwall.net/es/resource/100075060/esl/phrasal-verb-cloze",
     },
     {
-      title: 'Phrasal Verbs Match Up',
-      description:
-        'Match phrasal verbs with their meanings.',
-      source: 'Wordwall',
-      url: 'https://wordwall.net/es/resource/12167966/english/phrasal-verbs-match-up',
+      title: "Phrasal Verbs Match Up",
+      description: "Match phrasal verbs with their meanings.",
+      source: "Wordwall",
+      url: "https://wordwall.net/es/resource/12167966/english/phrasal-verbs-match-up",
     },
     {
-      title: 'Phrasal Verbs',
+      title: "Phrasal Verbs",
       description:
-        'Practice matching common phrasal verbs with their meanings.',
-      source: 'Wordwall',
-      url: 'https://wordwall.net/es/resource/28868865/english/phrasal-verbs',
+        "Practice matching common phrasal verbs with their meanings.",
+      source: "Wordwall",
+      url: "https://wordwall.net/es/resource/28868865/english/phrasal-verbs",
     },
     {
-      title: 'Phrasal Verbs Online Exercises',
+      title: "Phrasal Verbs Online Exercises",
       description:
-        'Practice phrasal verbs through exercises for different levels.',
-      source: 'English Grammar Online',
-      url: 'https://www.english-grammar.at/online_exercises/phrasal_verbs/phrasal_verbs_index.htm',
+        "Practice phrasal verbs through exercises for different levels.",
+      source: "English Grammar Online",
+      url: "https://www.english-grammar.at/online_exercises/phrasal_verbs/phrasal_verbs_index.htm",
+    },
+    {
+      title: "Phrasal Verbs Exercise 1",
+      description:
+        "Practice fifteen common phrasal verbs with an interactive exercise.",
+      source: "Perfect English Grammar",
+      url: "https://www.perfect-english-grammar.com/phrasal-verbs-exercise-1.html",
     },
   ];
 
@@ -64,9 +68,9 @@ export const PhrasalVerbs = () => {
           Phrasal verbs are common English expressions formed by combining a
           verb with a preposition or adverb. They often have a meaning that is
           different from the original verb, making them an important part of
-          everyday English vocabulary and communication. Learning common
-          phrasal verbs can help English learners understand conversations,
-          improve their speaking skills, and communicate more naturally.
+          everyday English vocabulary and communication. Learning common phrasal
+          verbs can help English learners understand conversations, improve
+          their speaking skills, and communicate more naturally.
         </p>
       </div>
 
@@ -89,9 +93,7 @@ export const PhrasalVerbs = () => {
 
               <p>{practice.description}</p>
 
-              <span className="practice-source">
-                {practice.source}
-              </span>
+              <span className="practice-source">{practice.source}</span>
 
               <a
                 href={practice.url}
@@ -110,4 +112,3 @@ export const PhrasalVerbs = () => {
 };
 
 export default PhrasalVerbs;
-
