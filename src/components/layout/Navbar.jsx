@@ -19,8 +19,10 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = useState(null);
+  const [vocabularyAnchorEl, setVocabularyAnchorEl] = useState(null);
 
   const menuOpen = Boolean(anchorEl);
+  const vocabularyMenuOpen = Boolean(vocabularyAnchorEl);
 
   const getTabValue = () => {
     switch (location.pathname) {
@@ -33,6 +35,12 @@ const Navbar = () => {
 
       case "/gerunds-infinitives":
         return 2;
+
+      case "/family-members":
+      case "/the-classroom":
+      case "/activities":
+      case "/the-weather":
+        return 3;
 
       default:
         return 0;
@@ -57,9 +65,39 @@ const Navbar = () => {
     navigate("/vowels");
   };
 
+  const handleVocabularyClick = (event) => {
+    setVocabularyAnchorEl(event.currentTarget);
+  };
+
+  const handleVocabularyMenuClose = () => {
+    setVocabularyAnchorEl(null);
+  };
+
+  const handleFamilyMembersClick = () => {
+    handleVocabularyMenuClose();
+    navigate("/family-members");
+  };
+
+  const handleTheClassroomClick = () => {
+    handleVocabularyMenuClose();
+    navigate("/the-classroom");
+  };
+
+  const handleActivitiesClick = () => {
+    handleVocabularyMenuClose();
+    navigate("/activities");
+  };
+
+  const handleTheWeatherClick = () => {
+    handleVocabularyMenuClose();
+    navigate("/the-weather");
+  };
+
+
   return (
     <div className="navbar">
       <Box sx={{ width: "100%" }}>
+
         <Tabs
           value={getTabValue()}
           aria-label="navigation tabs"
@@ -79,6 +117,8 @@ const Navbar = () => {
             },
           }}
         >
+
+
           <Tab
             label="Phrasal Verbs"
             component={NavLink}
@@ -89,11 +129,15 @@ const Navbar = () => {
             label="Pronunciation"
             onClick={handlePronunciationClick}
             aria-controls={
-              menuOpen ? "pronunciation-menu" : undefined
+              menuOpen
+                ? "pronunciation-menu"
+                : undefined
             }
             aria-haspopup="true"
             aria-expanded={
-              menuOpen ? "true" : undefined
+              menuOpen
+                ? "true"
+                : undefined
             }
           />
 
@@ -102,6 +146,23 @@ const Navbar = () => {
             component={NavLink}
             to="/gerunds-infinitives"
           />
+
+          <Tab
+            label="Vocabulary Cards"
+            onClick={handleVocabularyClick}
+            aria-controls={
+              vocabularyMenuOpen
+                ? "vocabulary-menu"
+                : undefined
+            }
+            aria-haspopup="true"
+            aria-expanded={
+              vocabularyMenuOpen
+                ? "true"
+                : undefined
+            }
+          />
+
         </Tabs>
 
         <Menu
@@ -110,6 +171,7 @@ const Navbar = () => {
           open={menuOpen}
           onClose={handleMenuClose}
         >
+
           <MenuItem onClick={handleConsonantsClick}>
             Consonants
           </MenuItem>
@@ -117,7 +179,34 @@ const Navbar = () => {
           <MenuItem onClick={handleVowelsClick}>
             Vowels
           </MenuItem>
+
         </Menu>
+
+        <Menu
+          id="vocabulary-menu"
+          anchorEl={vocabularyAnchorEl}
+          open={vocabularyMenuOpen}
+          onClose={handleVocabularyMenuClose}
+        >
+
+          <MenuItem onClick={handleFamilyMembersClick}>
+            Family Members
+          </MenuItem>
+
+          <MenuItem onClick={handleTheClassroomClick}>
+            The Classroom
+          </MenuItem>
+
+          <MenuItem onClick={handleActivitiesClick}>
+            Activities
+          </MenuItem>
+
+          <MenuItem onClick={handleTheWeatherClick}>
+            The Weather
+          </MenuItem>
+
+        </Menu>
+
       </Box>
     </div>
   );
